@@ -1,0 +1,150 @@
+body {
+    margin: 0;
+    font-family: 'Aldrich', sans-serif;
+    background-color: rgb(0, 39, 46);
+    color: #fffcfc;
+    line-height: 1.8;
+}
+
+/* HEADER */
+header {
+    background-color: rgb(14, 97, 80);
+    color: white;
+    text-align: center;
+    padding: 35px 20px;
+}
+
+header h1 {
+    font-weight: 600;
+}
+
+.tagline {
+    font-size: 14px;
+    opacity: 0.9;
+}
+
+/* NAVBAR */
+nav {
+    background-color: rgb(14, 97, 80); /* same as header/footer */
+    text-align: center;
+}
+
+nav ul.navbar {
+    list-style-type: none;
+    margin: 0;
+    padding: 10px 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+nav ul.navbar li {
+    margin: 0 15px;
+}
+
+nav ul.navbar li a {
+    color: #fffcfc; /* light text */
+    text-decoration: none;
+    font-weight: bold;
+    padding: 8px 12px;
+    transition: background-color 0.3s, color 0.3s;
+    border-radius: 5px;
+}
+
+nav ul.navbar li a:hover {
+    background-color: #9ee6c2; /* minty highlight */
+    color: rgb(0, 39, 46); /* dark text on hover */
+}
+
+/* HIGHLIGHT CURRENT PAGE */
+nav ul.navbar li a.active {
+    background-color: #9ee6c2; /* minty highlight */
+    color: rgb(0, 39, 46); /* dark text */
+}
+/* MAIN */
+main {
+    padding: 30px 60px;
+}
+
+section {
+    margin-bottom: 45px;
+}
+
+h2 {
+    color: #f0eaea;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+/* LIST */
+ul {
+    padding-left: 25px;
+}
+
+ul li {
+    margin-bottom: 8px;
+}
+
+/* QUICK LINKS */
+.quick-links .links a {
+    display: inline-block;
+    margin: 8px;
+    padding: 12px 22px;
+    background-color: rgb(14, 97, 80);
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: 500;
+}
+
+.quick-links .links a:hover {
+    background-color: rgb(0, 61, 71);
+}
+
+/* FOOTER */
+footer {
+    background-color: rgb(14, 97, 80);
+    color: white;
+    text-align: center;
+    padding: 15px;
+    font-size: 14px;
+}
+
+/* CASE STUDIES CARDS */
+.case-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 30px;
+}
+
+.case-card {
+    background-color: rgb(0, 61, 71);
+    padding: 25px;
+    border-left: 5px solid rgb(14, 97, 80);
+    border-radius: 8px;
+}
+
+.case-card h2 {
+    margin-top: 0;
+    color: #ffffff;
+}
+
+.case-card p {
+    font-size: 14px;
+    opacity: 0.9;
+}
+
+.read-btn {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 20px;
+    background-color: rgb(14, 97, 80);
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+.read-btn:hover {
+    background-color: rgb(0, 39, 46);
+}
