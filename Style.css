@@ -6,33 +6,86 @@ body {
     line-height: 1.8;
 }
 
-/* HEADER */
-header {
-    background-color: rgb(14, 97, 80);
-    color: white;
+.hero-image {
+    width: 100%;
+    height: 380px;
+    object-fit: cover;
+    display: block;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+    margin-bottom: 30px;
+}
+.hero {
+    position: relative;
+    height: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     text-align: center;
-    padding: 35px 20px;
+    color: white;
+    overflow: hidden;
 }
 
-header h1 {
-    font-weight: 600;
+/* Background Image */
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url("./HERO\ IMAGE\ 2.jpeg") center/cover no-repeat;
+    opacity: 0.5;   /* 50% opacity */
+    z-index: 1;
+}
+
+/* Text Content */
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+}
+
+.hero h1 {
+    font-size: 50px;
+    margin-bottom: 20px;
 }
 
 .tagline {
-    font-size: 14px;
-    opacity: 0.9;
+    font-size: 28px;
+    color: #a8f0d0;
+    margin-bottom: 20px;
 }
 
-/* NAVBAR */
+.hero p {
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+.hero-buttons .btn {
+    display: inline-block;
+    padding: 12px 25px;
+    margin: 10px;
+    background-color: #66cdaa;
+    color: black;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: bold;
+}
+
+/* ===========================
+   NAVBAR
+=========================== */
 nav {
-    background-color: rgb(14, 97, 80); /* same as header/footer */
+    background-color: rgb(14, 97, 80);
     text-align: center;
 }
 
 nav ul.navbar {
     list-style-type: none;
     margin: 0;
-    padding: 10px 0;
+    padding: 12px 0;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
@@ -43,7 +96,7 @@ nav ul.navbar li {
 }
 
 nav ul.navbar li a {
-    color: #fffcfc; /* light text */
+    color: #fffcfc;
     text-decoration: none;
     font-weight: bold;
     padding: 8px 12px;
@@ -52,31 +105,52 @@ nav ul.navbar li a {
 }
 
 nav ul.navbar li a:hover {
-    background-color: #9ee6c2; /* minty highlight */
-    color: rgb(0, 39, 46); /* dark text on hover */
+    background-color: #9ee6c2;
+    color: rgb(0, 39, 46);
 }
 
-/* HIGHLIGHT CURRENT PAGE */
+/* CURRENT PAGE ACTIVE */
 nav ul.navbar li a.active {
-    background-color: #9ee6c2; /* minty highlight */
-    color: rgb(0, 39, 46); /* dark text */
+    background-color: #9ee6c2;
+    color: rgb(0, 39, 46);
 }
-/* MAIN */
+
+
+/* ===========================
+   MAIN CONTENT
+=========================== */
 main {
-    padding: 30px 60px;
+    padding: 40px 10%;
 }
 
 section {
-    margin-bottom: 45px;
+    margin-bottom: 60px;
+    background-color: rgb(0, 61, 71);
+    padding: 35px;
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.25);
 }
 
 h2 {
-    color: #f0eaea;
+    color: #ffffff;
     font-weight: 600;
+    margin-bottom: 15px;
+    font-size: 26px;
+    border-left: 5px solid #9ee6c2;
+    padding-left: 12px;
+}
+
+/* paragraphs */
+section p {
+    font-size: 18px;
+    opacity: 0.95;
     margin-bottom: 15px;
 }
 
-/* LIST */
+
+/* ===========================
+   LIST STYLING
+=========================== */
 ul {
     padding-left: 25px;
 }
@@ -85,32 +159,89 @@ ul li {
     margin-bottom: 8px;
 }
 
-/* QUICK LINKS */
+
+/* ===========================
+   LEARN BASICS FLASH CARDS
+=========================== */
+.quick-links {
+    text-align: center;
+}
+
+.quick-links h2 {
+    text-align: left;
+}
+
+.quick-links .links {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
 .quick-links .links a {
-    display: inline-block;
-    margin: 8px;
-    padding: 12px 22px;
+    display: block;
+    padding: 18px;
     background-color: rgb(14, 97, 80);
     color: white;
     text-decoration: none;
-    border-radius: 6px;
+    border-radius: 10px;
     font-weight: 500;
+    font-size: 16px;
+    transition: 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.25);
 }
 
 .quick-links .links a:hover {
-    background-color: rgb(0, 61, 71);
+    background-color: #9ee6c2;
+    color: rgb(0, 39, 46);
+    transform: translateY(-5px);
 }
 
-/* FOOTER */
-footer {
-    background-color: rgb(14, 97, 80);
-    color: white;
+
+/* ===========================
+   GENOCIDE MAP SECTION
+=========================== */
+.map-section {
+    display: flex;
+    justify-content: center;
+    padding: 80px 20px;
+    background-color: #042f2e; /* dark background */
+}
+
+.map-container {
+    background-color: rgb(14, 97, 80);  /* green card */
+    padding: 50px;
+    border-radius: 20px;
     text-align: center;
-    padding: 15px;
-    font-size: 14px;
+    width: 80%;
+    max-width: 1000px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
 }
 
-/* CASE STUDIES CARDS */
+.map-container h2 {
+    font-size: 32px;
+    margin-bottom: 30px;
+    color: white;
+}
+
+.map-container img {
+    width: 60%;
+    max-width: 500px;
+    border-radius: 12px;
+    margin-bottom: 15px;
+}
+
+.map-subtext {
+    color: #d1fae5;
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+
+
+/* ===========================
+   CASE STUDIES CARDS
+=========================== */
 .case-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -148,6 +279,44 @@ footer {
 .read-btn:hover {
     background-color: rgb(0, 39, 46);
 }
+
+/* ===========================
+   index containers 
+=========================== */
+.links {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.learn-box {
+    background-color: rgb(14, 97, 80);
+    color: white;
+    padding: 20px;
+    border-radius: 12px;
+    width: 300px;
+    transition: 0.3s ease;
+}
+
+.learn-box:hover {
+    transform: translateY(-5px);
+    background-color: rgb(18, 120, 100);
+}
+
+.learn-box h3 {
+    margin-bottom: 10px;
+}
+
+.learn-box p {
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+
+/* ===========================
+   IMAGE FORMATTING
+=========================== */
 .about-image {
     width: 100%;
     text-align: center;
@@ -161,43 +330,36 @@ footer {
     border-radius: 10px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 }
-.agi-name {
-    display: flex;
-    justify-content: center;
-    margin: 40px 60px 20px 0;
-}
-
-.agi-name img {
-    width: 300px;      /* bigger than before */
-    max-width: 90%;    /* responsive for smaller screens */
-    height: auto;
-    opacity: 0.95;     /* slightly more visible */
-}
 
 .case-img {
-    width: 80%;           /* slightly smaller than the card */
-    max-width: 300px;     /* prevents it from getting too big */
-    height: auto;         /* keeps aspect ratio */
+    width: 80%;
+    max-width: 300px;
+    height: auto;
     object-fit: cover;
     border-radius: 8px;
-    margin: 15px auto;    /* centers image inside the card */
-    display: block;       /* ensures it centers properly */ 
+    margin: 15px auto;
+    display: block;
 }
+
+
+/* ===========================
+   FLEX SECTIONS (TEXT + IMAGE)
+=========================== */
 .section-container {
     display: flex;
-    flex-wrap: wrap;      /* responsive for small screens */
+    flex-wrap: wrap;
     align-items: flex-start;
     margin-bottom: 50px;
-    gap: 20px;            /* space between text and image */
+    gap: 20px;
 }
 
 .section-text {
-    flex: 1;              /* text takes remaining space */
-    min-width: 250px;     /* ensures readability on small screens */
+    flex: 1;
+    min-width: 250px;
 }
 
 .section-image {
-    flex: 0 0 300px;      /* fixed width for image */
+    flex: 0 0 300px;
 }
 
 .section-image img {
@@ -206,59 +368,644 @@ footer {
     border-radius: 10px;
 }
 
+
+/* ===========================
+   TAKE ACTION IMAGE
+=========================== */
 .take-action-image {
     margin-top: 50px;
     text-align: center;
 }
 
-/* Image Strip Section */
-.image-strip {
-    padding: 60px 10%;           /* space around section */
-    margin-top: 50px;
-    background-color: #0f3f38;   /* dark green background */
-    text-align: center;
+.take-action-image img {
+    width: 60%;
+    max-width: 600px;
+    height: 350px;
+    object-fit: cover;
     border-radius: 12px;
+    display: block;
+    margin: 0 auto;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
 }
 
-/* Optional section heading */
-.image-strip h2 {
-    color: #ffffff;
-    font-size: 28px;
-    margin-bottom: 30px;
-}
 
-/* Grid Layout */
+/* ===========================
+   GALLERY GRID
+=========================== */
 .gallery {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 20px;
 }
 
-/* Image Styling */
 .gallery img {
     width: 100%;
     height: 230px;
-    object-fit: cover;          /* ensures image doesn't stretch */
+    object-fit: cover;
     border-radius: 12px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     cursor: pointer;
 }
 
-/* Hover Effect */
 .gallery img:hover {
-    transform: scale(1.05);          /* slight zoom */
-    box-shadow: 0 8px 20px rgba(0,0,0,0.4);  /* soft shadow */
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.4);
 }
 
-/* Responsive Adjustment for Mobile */
+
+/* ===========================
+   FOOTER
+=========================== */
+footer {
+    background-color: rgb(14, 97, 80);
+    color: white;
+    text-align: center;
+    padding: 18px;
+    font-size: 14px;
+    margin-top: 50px;
+}
+
+
+/* ===========================
+   RESPONSIVE FIXES
+=========================== */
 @media (max-width: 768px) {
-    .gallery {
-        grid-template-columns: repeat(2, 1fr); /* 2 images per row */
+    main {
+        padding: 30px 6%;
+    }
+
+    header h1 {
+        font-size: 28px;
+    }
+
+    .hero-subtitle {
+        font-size: 20px;
+    }
+
+    .tagline {
+        font-size: 14px;
+    }
+
+    .image-strip img {
+        width: 95%;
     }
 }
 
 @media (max-width: 480px) {
-    .gallery {
-        grid-template-columns: 1fr; /* 1 image per row */
+    nav ul.navbar li {
+        margin: 6px 8px;
     }
+
+    .quick-links .links {
+        grid-template-columns: 1fr;
+    }
+}
+
+.center-block .section-img {
+    margin: 2rem auto 0 auto; /* top 2rem, horizontal auto */
+    width: 350px; /* small icon size */
+    height: auto;
+    display: block; /* makes margin:auto work */
+}
+
+.cards-section { 
+    padding: 4rem 2rem;
+    background-color: rgb(0, 39, 46); /* your body background */
+    font-family: 'Aldrich', sans-serif; /* match main CSS */
+    color: #fffcfc; /* default text color */
+}
+
+.cards-container {
+    display: flex;
+    flex-wrap: wrap;          /* stack on smaller screens */
+    align-items: center;      /* vertical alignment for cards */
+    justify-content: flex-start; /* keep left card left */
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Left card stays as is */
+.card-text {
+    flex: 1 1 500px;           /* text sizing */
+}
+
+/* Right card centered horizontally */
+.card-image {
+    flex: 1 1 400px;           /* image sizing */
+    display: flex;
+    justify-content: center;   /* horizontal centering */
+    align-items: center;       /* vertical alignment with left card */
+}
+
+/* Image styling */
+.card-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+.cards-container {
+    display: flex;
+    flex-wrap: wrap;          /* stack on smaller screens */
+    align-items: center;      /* vertical alignment for cards */
+    justify-content: flex-start; /* keep left card left */
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Left card stays as is */
+.card-text {
+    flex: 1 1 500px;           /* text sizing */
+}
+
+/* Right card centered horizontally */
+.card-image {
+    flex: 1 1 400px;           /* image sizing */
+    display: flex;
+    justify-content: center;   /* horizontal centering */
+    align-items: center;       /* vertical alignment with left card */
+}
+
+/* Image styling */
+.card-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+/* Responsive stacking
+@media (max-width: 768px) {
+    .cards-container {
+        flex-direction: column;
+        align-items: center; /* center both cards
+    }
+
+    /*.card-text, .card-image {
+        flex: 1 1 90%;
+        text-align: center;  /* optional for text card 
+    }
+}*/
+
+.card {
+    background-color: rgb(0, 61, 71); /* match your section style */
+    padding: 2rem;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+    border-radius: 10px;
+    flex: 1 1 300px; /* flexible sizing */
+}
+
+.card-text {
+    flex: 1 1 500px;
+    text-align: left;
+}
+
+.card-text h2 {
+    font-size: 2rem;
+    color: #9ee6c2; /* highlight color from your CSS */
+    margin-bottom: 1rem;
+}
+
+.card-text p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: #fffcfc; /* light text for dark card */
+    margin-bottom: 1rem;
+}
+
+/*CASES SECTION */
+/* Background Image */
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url("./HERO\ CASES.jpeg") center/cover no-repeat;
+    opacity: 0.5;   /* 50% opacity */
+    z-index: 1;
+}
+
+/* Text Content */
+.hero-content-alt {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+}
+
+.hero-content-alt h1 {
+    font-size: 50px;
+    margin-bottom: 20px;
+}
+
+.hero-content-alt .tagline {
+    font-size: 28px;
+    color: #a8f0d0;
+    margin-bottom: 20px;
+}
+
+.hero-content-alt p {
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+.hero-content-alt .hero-buttons .btn {
+    display: inline-block;
+    padding: 12px 25px;
+    margin: 10px;
+    background-color: #66cdaa;
+    color: black;
+    text-decoration: none;
+    border-radius: 6px;
+}
+
+/* PALESTINE SECTION */
+.hero-palestine {
+    position: relative;
+    height: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    overflow: hidden;
+}
+
+/* Background Image */
+.hero-palestine::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url("./1p.webp") center/cover no-repeat;
+    opacity: 0.5;   /* 50% opacity */
+    z-index: 1;
+}
+
+/* Text Content */
+.hero-palestine .hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+}
+
+/* Keep same styles for text and buttons */
+.hero-palestine h1 {
+    font-size: 50px;
+    margin-bottom: 20px;
+}
+
+.hero-palestine .tagline {
+    font-size: 28px;
+    color: #a8f0d0;
+    margin-bottom: 20px;
+}
+
+.hero-palestine p {
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+.hero-palestine .hero-buttons .btn {
+    display: inline-block;
+    padding: 12px 25px;
+    margin: 10px;
+    background-color: #66cdaa;
+    color: black;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: bold;
+}
+
+.pdf-section {
+    text-align: center;
+    padding: 40px 20px;
+    
+}
+
+.pdf-section h2 {
+    font-size: 28px;
+    margin-bottom: 15px;
+    color: #1a1a1a;
+}
+
+.pdf-section p {
+    font-size: 16px;
+    margin-bottom: 25px;
+    color: #333;
+}
+
+/* PDF Button style */
+.pdf-btn {
+    background-color: #9ee6c2;
+    color: #000;
+    padding: 15px 30px;
+    border-radius: 12px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+    transition: background 0.3s, color 0.3s, transform 0.2s;
+}
+
+.pdf-btn:hover {
+    background-color: #7fd4aa;
+    color: #fff;
+    transform: translateY(-3px);
+}
+
+/* SUDAN SECTION */
+.hero-sudan {
+    position: relative;
+    height: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    overflow: hidden;
+}
+
+/* Background Image */
+.hero-sudan::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url("./1s.webp") center/cover no-repeat;
+    opacity: 0.5;   /* 50% opacity */
+    z-index: 1;
+}
+
+/* Text Content */
+.hero-sudan .hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+}
+
+/* Keep same styles for text and buttons */
+.hero-sudan h1 {
+    font-size: 50px;
+    margin-bottom: 20px;
+}
+
+.hero-sudan .tagline {
+    font-size: 28px;
+    color: #a8f0d0;
+    margin-bottom: 20px;
+}
+
+.hero-sudan p {
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+.hero-sudan .hero-buttons .btn {
+    display: inline-block;
+    padding: 12px 25px;
+    margin: 10px;
+    background-color: #66cdaa;
+    color: black;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: bold;
+}
+
+/* CONGO SECTION */
+.hero-congo {
+    position: relative;
+    height: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    overflow: hidden;
+}
+
+/* Background Image */
+.hero-congo::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url("./1c.jpg") center/cover no-repeat;
+    opacity: 0.5;
+    z-index: 1;
+}
+
+/* Text Content */
+.hero-congo .hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+}
+
+/* Keep same styles for text and buttons */
+.hero-congo h1 {
+    font-size: 50px;
+    margin-bottom: 20px;
+}
+
+.hero-congo .tagline {
+    font-size: 28px;
+    color: #a8f0d0;
+    margin-bottom: 20px;
+}
+
+.hero-congo p {
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+.hero-congo .hero-buttons .btn {
+    display: inline-block;
+    padding: 12px 25px;
+    margin: 10px;
+    background-color: #66cdaa;
+    color: black;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: bold;
+}
+
+/* MYANMAR SECION */
+.hero-myanmar {
+    position: relative;
+    height: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    overflow: hidden;
+}
+
+/* Background Image */
+.hero-myanmar::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url("./1m.webp") center/cover no-repeat;
+    opacity: 0.5;
+    z-index: 1;
+}
+
+/* Text Content */
+.hero-myanmar .hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+}
+
+/* Keep same styles for text and buttons */
+.hero-myanmar h1 {
+    font-size: 50px;
+    margin-bottom: 20px;
+}
+
+.hero-myanmar .tagline {
+    font-size: 28px;
+    color: #a8f0d0;
+    margin-bottom: 20px;
+}
+
+.hero-myanmar p {
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+.hero-myanmar .hero-buttons .btn {
+    display: inline-block;
+    padding: 12px 25px;
+    margin: 10px;
+    background-color: #66cdaa;
+    color: black;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: bold;
+}
+
+/* TAKE ACTION PAGE */
+.hero-takeaction {
+    position: relative;
+    height: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    overflow: hidden;
+}
+
+.hero-takeaction::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url("./action3.jpg") center/cover no-repeat;
+    opacity: 0.5;
+    z-index: 1;
+}
+
+.hero-takeaction .hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+}
+
+.hero-takeaction h1 {
+    font-size: 50px;
+    margin-bottom: 20px;
+}
+
+.hero-takeaction .tagline {
+    font-size: 28px;
+    color: #a8f0d0;
+    margin-bottom: 20px;
+}
+
+.hero-takeaction p {
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+.hero-takeaction .hero-buttons .btn {
+    display: inline-block;
+    padding: 12px 25px;
+    margin: 10px;
+    background-color: #66cdaa;
+    color: black;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: bold;
+}
+
+/* CONTACT PAGE */
+.hero-contact {
+    position: relative;
+    height: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    overflow: hidden;
+}
+
+.hero-contact::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url("./Contact1.avif") center/cover no-repeat;
+    opacity: 0.5;
+    z-index: 1;
+}
+
+.hero-contact .hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+}
+
+.hero-contact h1 {
+    font-size: 50px;
+    margin-bottom: 20px;
+}
+
+.hero-contact .tagline {
+    font-size: 28px;
+    color: #a8f0d0;
+    margin-bottom: 20px;
+}
+
+.hero-contact p {
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+.hero-contact .hero-buttons .btn {
+    display: inline-block;
+    padding: 12px 25px;
+    margin: 10px;
+    background-color: #66cdaa;
+    color: black;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: bold;
 }
