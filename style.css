@@ -412,20 +412,6 @@ ul li {
     box-shadow: 0 8px 20px rgba(0,0,0,0.4);
 }
 
-
-/* ===========================
-   FOOTER
-=========================== */
-footer {
-    background-color: rgb(14, 97, 80);
-    color: white;
-    text-align: center;
-    padding: 18px;
-    font-size: 14px;
-    margin-top: 50px;
-}
-
-
 /* ===========================
    RESPONSIVE FIXES
 =========================== */
@@ -1008,4 +994,79 @@ footer {
     text-decoration: none;
     border-radius: 6px;
     font-weight: bold;
+}
+
+/* ===========================
+   FOOTER (NEW STYLE)
+=========================== */
+
+footer {
+    background: linear-gradient(135deg, rgb(14, 97, 80), rgb(0, 61, 71));
+    color: #ffffff;
+    padding: 60px 10% 30px 10%;
+    margin-top: 80px;
+}
+
+/* Footer container layout */
+.footer-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+/* Column headings */
+.footer-container h3 {
+    font-size: 18px;
+    margin-bottom: 18px;
+    color: #ffffff;
+}
+
+/* Paragraph text */
+.footer-container p {
+    font-size: 14px;
+    line-height: 1.6;
+    opacity: 0.9;
+}
+
+/* Footer links */
+.footer-container ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-container ul li {
+    margin-bottom: 10px;
+}
+
+.footer-container ul li a {
+    text-decoration: none;
+    color: #e6fffa;
+    font-size: 14px;
+    transition: 0.3s ease;
+}
+
+.footer-container ul li a:hover {
+    color: #9ee6c2;
+    padding-left: 5px;
+}
+
+/* Bottom copyright bar */
+.footer-bottom {
+    border-top: 1px solid rgba(255,255,255,0.2);
+    text-align: center;
+    padding-top: 15px;
+    font-size: 13px;
+    opacity: 0.85;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    footer {
+        padding: 50px 6% 25px 6%;
+    }
+
+    .footer-container {
+        gap: 25px;
+    }
 }
